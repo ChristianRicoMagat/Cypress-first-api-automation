@@ -67,6 +67,25 @@ describe('TC001 - Get API user', () => {
             expect(res.body).has.property('gender', createUser.gender)
             expect(res.body).has.property('status', createUser.status)
 
+        }).then((res) => {
+            const userId = res.body.id
+            cy.log("User id is: " + userId)
+
+            cy.request({
+                method: 'GET',
+                url: 'https://gorest.co.in/public/v2/users/' + userId,
+                headers: {
+                    'authorization': "Bearer" + accessToken
+                }
+
+            }).then((res) => {
+                expect(res.status).to.eq(200)
+                expect(res.body).has.property('id', userId)
+                expect(res.body).has.property('name', createUser.name)
+                expect(res.body).has.property('email', testEmail)
+                expect(res.body).has.property('gender', createUser.gender)
+                expect(res.body).has.property('status', createUser.status)
+            })
         })
 
     })
