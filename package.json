@@ -1,0 +1,22 @@
+{
+  "name": "apiautomation",
+  "version": "1.0.0",
+  "description": "First Public API Automation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrizzysixx/Cypress-first-api-automation.git"
+  },
+  "author": "Christian Rico",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chrizzysixx/Cypress-first-api-automation/issues"
+  },
+  "homepage": "https://github.com/chrizzysixx/Cypress-first-api-automation#readme",
+  "dependencies": {
+    "cypress": "^10.10.0"
+  }
+}
